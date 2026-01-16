@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Button Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-btn { padding: 10px 20px; background: #6366f1; color: white; border: none; cursor: pointer; margin: 10px; }
+        #output { margin-top: 20px; padding: 20px; background: #f0f0f0; border-radius: 8px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>NikohlCreations Debug Page</h1>
+    
+    <h2>Testing JavaScript Files Loading</h2>
+    <div id="output">
+        <p>Checking files...</p>
+    </div>
+    
+    <button class="test-btn" onclick="testPackageSelection()">Test Package Selection</button>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="booking-system.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        // Check what's loaded
+        setTimeout(() => {
+            let html = '<h3>Status Check:</h3>';
+            html += '<p class="' + (typeof initializeBookingSystem === 'function' ? 'success' : 'error') + '">initializeBookingSystem: ' + (typeof initializeBookingSystem === 'function' ? '✅ Found' : '❌ Not found') + '</p>';
+            html += '<p class="' + (typeof validateConsultationBooking === 'function' ? 'success' : 'error') + '">validateConsultationBooking: ' + (typeof validateConsultationBooking === 'function' ? '✅ Found' : '❌ Not found') + '</p>';
+            html += '<p class="' + (typeof bookConsultation === 'function' ? 'success' : 'error') + '">bookConsultation: ' + (typeof bookConsultation === 'function' ? '✅ Found' : '❌ Not found') + '</p>';
+            html += '<p class="' + (typeof flatpickr !== 'undefined' ? 'success' : 'error') + '">Flatpickr: ' + (typeof flatpickr !== 'undefined' ? '✅ Loaded' : '❌ Not loaded') + '</p>';
+            
+            output.innerHTML = html;
+        }, 500);
+        
+        function testPackageSelection() {
+            alert('Button clicked! JavaScript is working.');
+            console.log('Test button clicked - JavaScript is working');
+        }
+    </script>
+</body>
+</html>

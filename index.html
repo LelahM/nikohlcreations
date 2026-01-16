@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NikohlCreations - Building apps to Boost You</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flatpickr for Date/Time Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>NikohlCreations</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#book">Book Now</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">NikohlCreations</h1>
+            <p class="hero-slogan">Building apps to Boost You.</p>
+            <a href="#book" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Book Now Section -->
+    <section id="book" class="book-section">
+        <div class="container">
+            <h2 class="section-title">Book Your Package</h2>
+            <p class="section-subtitle">Choose the perfect package for your needs</p>
+            
+            <div class="packages-grid">
+                <!-- Consultation Package -->
+                <div class="package-card" data-package="consultation" data-price="49.99">
+                    <div class="package-header">
+                        <h3>Consultation</h3>
+                        <div class="package-price">
+                            <span class="price">$49.99</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Fee credited towards project</li>
+                        <li><i class="fas fa-check"></i> 30-minute consultation</li>
+                        <li><i class="fas fa-check"></i> Project roadmap discussion</li>
+                        <li><i class="fas fa-check"></i> Budget & timeline planning</li>
+                    </ul>
+                    <button class="select-package-btn">Select Package</button>
+                </div>
+
+                <!-- Starter Package -->
+                <div class="package-card" data-package="starter" data-price="297.99">
+                    <div class="package-header">
+                        <h3>Starter Package</h3>
+                        <div class="package-price">
+                            <span class="price">$297.99</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 1-2 page app</li>
+                        <li><i class="fas fa-check"></i> Responsive design</li>
+                        <li><i class="fas fa-check"></i> Live deployment</li>
+                        <li><i class="fas fa-check"></i> 1 revision included</li>
+                    </ul>
+                    <button class="select-package-btn">Select Package</button>
+                </div>
+
+                <!-- Growth Package -->
+                <div class="package-card popular" data-package="growth" data-price="449.99">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Growth Package</h3>
+                        <div class="package-price">
+                            <span class="price">$449.99</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 2-3 page app</li>
+                        <li><i class="fas fa-check"></i> Navigation + forms</li>
+                        <li><i class="fas fa-check"></i> Dark/light mode</li>
+                        <li><i class="fas fa-check"></i> Responsive design</li>
+                        <li><i class="fas fa-check"></i> 2 revisions included</li>
+                    </ul>
+                    <button class="select-package-btn">Select Package</button>
+                </div>
+
+                <!-- Launch Plus Package -->
+                <div class="package-card" data-package="launch-plus" data-price="697.99">
+                    <div class="package-header">
+                        <h3>Launch Plus Package</h3>
+                        <div class="package-price">
+                            <span class="price">$697.99</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 4-5 page web app</li>
+                        <li><i class="fas fa-check"></i> Choose 3 add-ons</li>
+                        <li><i class="fas fa-check"></i> Dark/light mode toggle</li>
+                        <li><i class="fas fa-check"></i> Contact form integration</li>
+                        <li><i class="fas fa-check"></i> Email integration</li>
+                        <li><i class="fas fa-check"></i> Custom UI theme</li>
+                        <li><i class="fas fa-check"></i> Responsive design</li>
+                        <li><i class="fas fa-check"></i> Live deployment</li>
+                        <li><i class="fas fa-check"></i> 2 revisions included</li>
+                    </ul>
+                    <button class="select-package-btn">Select Package</button>
+                </div>
+            </div>
+
+            <!-- Express Delivery Option -->
+            <div class="express-delivery-option">
+                <div class="express-badge">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Need it faster?</h3>
+                <p>Add <strong>Express Delivery</strong> for $150 to cut your timeline in half!</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <form id="bookingForm">
+                <div class="selected-package-info">
+                    <h3 id="selectedPackageName"></h3>
+                    <p class="package-price-display">
+                        <span id="originalPrice"></span>
+                        <span id="discountedPrice" style="display: none;"></span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingName">Full Name *</label>
+                    <input type="text" id="bookingName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingEmail">Email *</label>
+                    <input type="email" id="bookingEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingPhone">Phone Number *</label>
+                    <input type="tel" id="bookingPhone" required>
+                </div>
+
+                <!-- Consultation Date/Time Selection (Only for Consultation Package) -->
+                <div class="consultation-booking" id="consultationBooking" style="display: none;">
+                    <div class="booking-step">
+                        <h3><i class="fas fa-calendar-alt"></i> Select Consultation Date & Time</h3>
+                        
+                        <div class="form-group">
+                            <label for="consultationDate">Choose Date *</label>
+                            <input type="text" id="consultationDate" placeholder="Select a date" readonly required>
+                            <small class="help-text">Available Monday-Friday, 9 AM - 5 PM EST</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consultationTime">Choose Time Slot *</label>
+                            <select id="consultationTime" required>
+                                <option value="">Select a time slot</option>
+                            </select>
+                            <small class="help-text" id="timezoneDisplay">Times shown in your timezone</small>
+                        </div>
+
+                        <div class="booking-summary" id="bookingSummary" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <p><strong>Selected:</strong> <span id="selectedDateTime"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="discountCode">Discount Code (Optional)</label>
+                    <div class="discount-input-group">
+                        <input type="text" id="discountCode" placeholder="Enter code">
+                        <button type="button" id="applyDiscountBtn">Apply</button>
+                    </div>
+                    <span id="discountMessage" class="discount-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNumber">Card Number *</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date *</label>
+                        <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV *</label>
+                        <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="billingZip">Billing Zip Code *</label>
+                    <input type="text" id="billingZip" required>
+                </div>
+
+                <div class="express-delivery-checkbox">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="expressDelivery">
+                        <span>Add Express Delivery (+$150) - Cut timeline in half! <i class="fas fa-rocket"></i></span>
+                    </label>
+                </div>
+
+                <div class="total-display">
+                    <span>Total:</span>
+                    <span id="totalAmount">$0</span>
+                </div>
+
+                <button type="submit" class="submit-booking-btn">Complete Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>Hi! I'm Le'lah McKoy, the founder of Nikohl Creations. I create web applications for small businesses, creators, and entrepreneurs from one-page apps to multi-page solutions. I offer consultation, development, and support to help you bring your ideas online quickly and effectively.</p>
+                    <a href="#contact" class="cta-button">Let's build your app</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy" class="profile-image">
+                    <div class="image-frame"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Check out some of my recent work</p>
+            
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="featured-badge">Created by Me!</div>
+                    <div class="project-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>NikohlCreations Website</h3>
+                    <p>This very website! Built from scratch to showcase my web development skills</p>
+                    <a href="#home" class="project-link">
+                        You're Here! <i class="fas fa-check-circle"></i>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Personal Portfolio</h3>
+                    <p>My personal website showcasing my work and experience</p>
+                    <a href="https://www.lelahmckoy.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                        Visit Site <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>GetTasked</h3>
+                    <p>A task management application to boost productivity</p>
+                    <a href="https://gettasked.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
+                        Visit Site <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect With Me</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/lelahmckoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lelahmckoy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nikohlcreations" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have questions? I'd love to hear from you!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:lelahnikohl@gmail.com">lelahnikohl@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-assistant">
+                        <div class="ai-assistant-header">
+                            <div class="ai-avatar">
+                                <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy AI Assistant">
+                            </div>
+                            <div>
+                                <h3>AI Assistant</h3>
+                                <p class="ai-status">Powered by Le'lah's expertise</p>
+                            </div>
+                        </div>
+                        <p>Need help choosing a package or have questions about services?</p>
+                        <button class="ai-chat-btn" id="aiChatBtn">
+                            <i class="fas fa-comments"></i> Chat with AI Assistant
+                        </button>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Full Name *</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email *</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" rows="5" placeholder="What are you interested in or any questions you have..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Modal -->
+    <div class="modal" id="aiChatModal">
+        <div class="modal-content chat-modal">
+            <span class="close-modal">&times;</span>
+            <div class="chat-header">
+                <div class="ai-avatar-large">
+                    <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy AI">
+                </div>
+                <div>
+                    <h2>AI Booking Assistant</h2>
+                    <p class="ai-subtitle">Powered by Le'lah's expertise</p>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-message bot-message">
+                    <div class="message-avatar">
+                        <img src="images/nikohlcreations.jpg" alt="AI">
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm Le'lah's AI assistant. I'm here to help you find the perfect package for your needs. What kind of project are you looking to build?</p>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-input-form" id="chatForm">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NikohlCreations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Toast -->
+    <div class="toast" id="successToast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <!-- Flatpickr Library -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Booking System -->
+    <script src="booking-system.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>

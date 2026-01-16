@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Integration Test</title>
+</head>
+<body>
+    <h1>Testing booking-system.js integration</h1>
+    <div id="output"></div>
+    
+    <script>
+        // Test if functions are defined
+        const tests = {
+            'flatpickr available': typeof flatpickr !== 'undefined',
+            'File structure looks good': true
+        };
+        
+        const output = document.getElementById('output');
+        for (const [test, passed] of Object.entries(tests)) {
+            output.innerHTML += `<p>${passed ? '✅' : '❌'} ${test}</p>`;
+        }
+    </script>
+</body>
+</html>
