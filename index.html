@@ -10,7 +10,7 @@
     <!-- Flatpickr for Date/Time Picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
-<body>
+<body class="dark-mode">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -47,31 +47,22 @@
         <div class="container">
             <h2 class="section-title">Book Your Package</h2>
             <p class="section-subtitle">Choose the perfect package for your needs</p>
-            
-            <div class="packages-grid">
-                <!-- Consultation Package -->
-                <div class="package-card" data-package="consultation" data-price="49.99">
-                    <div class="package-header">
-                        <h3>Consultation</h3>
-                        <div class="package-price">
-                            <span class="price">$49.99</span>
-                        </div>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Fee credited towards project</li>
-                        <li><i class="fas fa-check"></i> 30-minute consultation</li>
-                        <li><i class="fas fa-check"></i> Project roadmap discussion</li>
-                        <li><i class="fas fa-check"></i> Budget & timeline planning</li>
-                    </ul>
-                    <button class="select-package-btn">Select Package</button>
-                </div>
 
+            <!-- Student Discount Section -->
+            <div class="student-discount-highlight">
+                <div class="discount-badge">Student Discount</div>
+                <h3>20% OFF for Students!</h3>
+                <p>Show your student ID at checkout. <span class="discount-amount">Save 20% on any package!</span></p>
+            </div>
+
+            <div class="packages-grid">
                 <!-- Starter Package -->
                 <div class="package-card" data-package="starter" data-price="297.99">
                     <div class="package-header">
                         <h3>Starter Package</h3>
                         <div class="package-price">
-                            <span class="price">$297.99</span>
+                            <span class="price strikethrough">$349.99</span>
+                            <span class="price discounted">$297.99</span>
                         </div>
                     </div>
                     <ul class="package-features">
@@ -80,16 +71,17 @@
                         <li><i class="fas fa-check"></i> Live deployment</li>
                         <li><i class="fas fa-check"></i> 1 revision included</li>
                     </ul>
-                    <button class="select-package-btn">Select Package</button>
+                    <button class="more-details-btn">More Details</button>
                 </div>
 
                 <!-- Growth Package -->
-                <div class="package-card popular" data-package="growth" data-price="449.99">
+                <div class="package-card popular" data-package="growth" data-price="349.99">
                     <div class="popular-badge">Most Popular</div>
                     <div class="package-header">
                         <h3>Growth Package</h3>
                         <div class="package-price">
-                            <span class="price">$449.99</span>
+                            <span class="price strikethrough">$399.99</span>
+                            <span class="price discounted">$349.99</span>
                         </div>
                     </div>
                     <ul class="package-features">
@@ -99,15 +91,16 @@
                         <li><i class="fas fa-check"></i> Responsive design</li>
                         <li><i class="fas fa-check"></i> 2 revisions included</li>
                     </ul>
-                    <button class="select-package-btn">Select Package</button>
+                    <button class="more-details-btn">More Details</button>
                 </div>
 
                 <!-- Launch Plus Package -->
-                <div class="package-card" data-package="launch-plus" data-price="697.99">
+                <div class="package-card" data-package="launch-plus" data-price="597.99">
                     <div class="package-header">
                         <h3>Launch Plus Package</h3>
                         <div class="package-price">
-                            <span class="price">$697.99</span>
+                            <span class="price strikethrough">$699.99</span>
+                            <span class="price discounted">$597.99</span>
                         </div>
                     </div>
                     <ul class="package-features">
@@ -121,7 +114,7 @@
                         <li><i class="fas fa-check"></i> Live deployment</li>
                         <li><i class="fas fa-check"></i> 2 revisions included</li>
                     </ul>
-                    <button class="select-package-btn">Select Package</button>
+                    <button class="more-details-btn">More Details</button>
                 </div>
             </div>
 
@@ -133,7 +126,6 @@
                 <h3>Need it faster?</h3>
                 <p>Add <strong>Express Delivery</strong> for $150 to cut your timeline in half!</p>
             </div>
-        </div>
         </div>
     </section>
 
@@ -249,7 +241,7 @@
                     <a href="#contact" class="cta-button">Let's build your app</a>
                 </div>
                 <div class="about-image">
-                    <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy" class="profile-image">
+                    <img src="picture.jpeg" alt="Le'lah McKoy" class="profile-image" style="object-fit: cover; object-position: center 15%;">
                     <div class="image-frame"></div>
                 </div>
             </div>
@@ -259,58 +251,79 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">Check out some of my recent work</p>
-            
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="featured-badge">Created by Me!</div>
-                    <div class="project-icon">
-                        <i class="fas fa-star"></i>
+            <h2 class="section-title">Templates</h2>
+            <p class="section-subtitle">Pick a template to jumpstart your website. Choose a style you love!</p>
+            <div class="projects-categories">
+                <div class="projects-category portfolio-projects">
+                    <h3>Portfolio</h3>
+                    <div class="projects-grid">
+                        <div class="project-card template-card" data-template="lelah-portfolio">
+                            <div class="project-icon"><i class="fas fa-star"></i></div>
+                            <h3>Student portfolio</h3>
+                            <img src="studentportfolio.png" alt="Student Portfolio Preview" class="template-preview-img">
+                            <p>Inspired by my own site, great for personal branding.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://www.lelahmckoy.com', '_blank')">Preview</button>
+                        </div>
+                        <!-- Casual Portfolio Template -->
+                        <div class="project-card template-card" data-template="casual-portfolio">
+                            <div class="project-icon"><i class="fas fa-user-circle"></i></div>
+                            <h3>Casual Portfolio</h3>
+                            <img src="pov.png" alt="Casual Portfolio Preview" class="template-preview-img">
+                            <p>Simple, modern portfolio for creators and professionals.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://pov23.vercel.app', '_blank')">Preview</button>
+                        </div>
+                        <!-- Art Portfolio Template -->
+                        <div class="project-card template-card" data-template="dreamville">
+                            <div class="project-icon"><i class="fas fa-music"></i></div>
+                            <h3>Art Portfolio</h3>
+                            <img src="dreamville.png" alt="Dreamville Project Preview" class="template-preview-img">
+                            <p>Modern, creative site inspired by Dreamville. Great for artists, collectives, or music brands.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://dreamville-five.vercel.app/', '_blank')">Preview</button>
+                        </div>
                     </div>
-                    <h3>NikohlCreations Website</h3>
-                    <p>This very website! Built from scratch to showcase my web development skills</p>
-                    <a href="#home" class="project-link">
-                        You're Here! <i class="fas fa-check-circle"></i>
-                    </a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-user"></i>
+                <div class="projects-category personal-projects">
+                    <h3>Personal</h3>
+                    <div class="projects-grid">
+                        <!-- GetTasked Time Management App Template -->
+                        <div class="project-card template-card" data-template="gettasked">
+                            <div class="project-icon"><i class="fas fa-tasks"></i></div>
+                            <h3>GetTasked</h3>
+                            <img src="gettasked.png" alt="GetTasked Time Management App Preview" class="template-preview-img">
+                            <p>Time management app to help you organize and track your daily tasks efficiently.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://gettasked.vercel.app/', '_blank')">Preview</button>
+                        </div>
                     </div>
-                    <h3>Personal Portfolio</h3>
-                    <p>My personal website showcasing my work and experience</p>
-                    <a href="https://www.lelahmckoy.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                        Visit Site <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-tasks"></i>
+                <div class="projects-category business-projects">
+                    <h3>Business</h3>
+                    <div class="projects-grid">
+                        <div class="project-card template-card" data-template="data-sistah">
+                            <div class="project-icon"><i class="fas fa-database"></i></div>
+                            <h3>Data Sistah</h3>
+                            <img src="datasistah.png" alt="Data Sistah Preview" class="template-preview-img">
+                            <p>Showcase your business with a data-driven look.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://datasistah.vercel.app/', '_blank')">Preview</button>
+                        </div>
+                        <div class="project-card template-card" data-template="nikohl-creations">
+                            <div class="project-icon"><i class="fas fa-star"></i></div>
+                            <h3>Nikohl Creations</h3>
+                            <img src="nikohlcreations.png" alt="Nikohl Creations Preview" class="template-preview-img">
+                            <p>My signature template, great for creative businesses.</p>
+                            <button class="choose-template-btn" onclick="window.open('https://nikohl-creations-demo.example.com', '_blank')">Preview</button>
+                        </div>
                     </div>
-                    <h3>GetTasked</h3>
-                    <p>A task management application to boost productivity</p>
-                    <a href="https://gettasked.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">
-                        Visit Site <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
             </div>
-
-            <div class="social-links">
-                <h3>Connect With Me</h3>
-                <div class="social-icons">
-                    <a href="https://github.com/lelahmckoy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/lelahmckoy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/nikohlcreations" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
+        </div>
+        <!-- Template Preview Modal -->
+        <div class="modal" id="templatePreviewModal">
+            <div class="modal-content preview-modal-content"></div>
+                <span class="close-modal" id="closeTemplatePreview">&times;</span>
+                <h2 id="previewTemplateTitle"></h2>
+                <img id="previewTemplateImg" src="" alt="Template Preview" style="width:100%;max-width:600px;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.15);margin-bottom:1rem;">
+                <p id="previewTemplateDesc"></p>
+                <button id="selectThisTemplateBtn" class="cta-button">Select This Template</button>
             </div>
         </div>
     </section>
@@ -320,85 +333,34 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Have questions? I'd love to hear from you!</p>
-            
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <a href="mailto:lelahnikohl@gmail.com">lelahnikohl@gmail.com</a>
+                            <a href="mailto:nikohlcreations@gmail.com">nikohlcreations@gmail.com</a>
                         </div>
-                    </div>
-                    
-                    <div class="ai-assistant">
-                        <div class="ai-assistant-header">
-                            <div class="ai-avatar">
-                                <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy AI Assistant">
-                            </div>
-                            <div>
-                                <h3>AI Assistant</h3>
-                                <p class="ai-status">Powered by Le'lah's expertise</p>
-                            </div>
-                        </div>
-                        <p>Need help choosing a package or have questions about services?</p>
-                        <button class="ai-chat-btn" id="aiChatBtn">
-                            <i class="fas fa-comments"></i> Chat with AI Assistant
-                        </button>
                     </div>
                 </div>
-
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="contactName">Full Name *</label>
                         <input type="text" id="contactName" required>
                     </div>
-
                     <div class="form-group">
                         <label for="contactEmail">Email *</label>
                         <input type="email" id="contactEmail" required>
                     </div>
-
                     <div class="form-group">
                         <label for="contactMessage">Message *</label>
                         <textarea id="contactMessage" rows="5" placeholder="What are you interested in or any questions you have..." required></textarea>
                     </div>
-
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- AI Chat Modal -->
-    <div class="modal" id="aiChatModal">
-        <div class="modal-content chat-modal">
-            <span class="close-modal">&times;</span>
-            <div class="chat-header">
-                <div class="ai-avatar-large">
-                    <img src="images/nikohlcreations.jpg" alt="Le'lah McKoy AI">
-                </div>
-                <div>
-                    <h2>AI Booking Assistant</h2>
-                    <p class="ai-subtitle">Powered by Le'lah's expertise</p>
-                </div>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="chat-message bot-message">
-                    <div class="message-avatar">
-                        <img src="images/nikohlcreations.jpg" alt="AI">
-                    </div>
-                    <div class="message-content">
-                        <p>Hi! I'm Le'lah's AI assistant. I'm here to help you find the perfect package for your needs. What kind of project are you looking to build?</p>
-                    </div>
-                </div>
-            </div>
-            <form class="chat-input-form" id="chatForm">
-                <input type="text" id="chatInput" placeholder="Type your message...">
-                <button type="submit"><i class="fas fa-paper-plane"></i></button>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -415,6 +377,10 @@
 
     <!-- Flatpickr Library -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Stripe.js for Payment Integration -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- EmailJS for Contact Form Email Sending -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <!-- Booking System -->
     <script src="booking-system.js"></script>
     <!-- Main Script -->
