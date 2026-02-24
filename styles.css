@@ -348,6 +348,20 @@ section {
     background-clip: text;
 }
 
+.package-price .price.strikethrough {
+    text-decoration: line-through;
+    color: #b1b1b1;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}
+
+.package-price .price.discounted {
+    color: var(--primary, #6c63ff);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
 .package-features {
     list-style: none;
     margin-bottom: 2rem;
@@ -1266,6 +1280,14 @@ section {
     .booking-step h3 {
         font-size: 1rem;
     }
+
+    .templates-grid {
+        grid-template-columns: 1fr;
+    }
+    .student-discount-section {
+        font-size: 1.1rem;
+        padding: 1.5rem 0.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1447,4 +1469,248 @@ section {
 
 .confirmation-details strong {
     color: var(--primary-color);
+}
+
+/* Templates Section */
+.templates-section {
+    background-color: var(--bg-secondary);
+    padding: 5rem 0;
+}
+.templates-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.template-card {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+}
+.template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+.template-category {
+    font-size: 1.2rem;
+    color: var (--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Student Discount Section */
+.student-discount-section {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 3px solid var(--primary-color);
+}
+.student-discount-section .discount-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+.student-discount-section p {
+    margin: 1rem 0 0 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Template Card Highlight */
+.template-card.selected {
+    border: 2.5px solid var(--primary, #6c63ff);
+    box-shadow: 0 0 0 4px rgba(108,99,255,0.12);
+    background: var(--highlight-bg, #f5f7ff);
+    transition: box-shadow 0.2s, border 0.2s;
+}
+.template-card .choose-template-btn {
+    margin-top: 0.5rem;
+    background: var(--primary, #6c63ff);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.template-card .choose-template-btn:hover {
+    background: #554ee2;
+}
+.template-preview-img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    margin: 0.5rem 0 0.75rem 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+/* Template Preview Modal */
+#templatePreviewModal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    align-items: center;
+    justify-content: center;
+}
+#templatePreviewModal.active {
+    display: flex;
+}
+.preview-modal-content {
+    background: #fff;
+    color: #222;
+    border-radius: 16px;
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    max-width: 650px;
+    width: 95vw;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    position: relative;
+    text-align: center;
+}
+.preview-modal-content .close-modal {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+}
+#selectThisTemplateBtn {
+    margin-top: 1.2rem;
+}
+
+/* Dark mode for modal */
+body.dark-mode #templatePreviewModal .preview-modal-content {
+    background: #23243a;
+    color: #f5f5f5;
+}
+body.dark-mode #templatePreviewModal .close-modal {
+    color: #bbb;
+}
+
+/* Info Bubbles */
+.info-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.info-bubble {
+  background: var(--bubble-bg, #222);
+  color: var(--bubble-color, #fff);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.info-bubble.active, .info-bubble:focus {
+  background: var(--accent, #ffb347);
+  color: #222;
+  outline: none;
+}
+.bubble-info-content {
+  margin-top: 0.75rem;
+  background: var(--bubble-info-bg, #333);
+  color: var(--bubble-info-color, #fff);
+  border-radius: 1rem;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  display: none;
+  min-height: 2.2rem;
+}
+
+/* More Details Button and Modal */
+.more-details-btn {
+  background: #a259ff;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.more-details-btn:hover, .more-details-btn:focus {
+  background: #7c3aed;
+  color: #fff;
+}
+#detailsModal {
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.45);
+}
+#detailsModal .modal-content {
+  background: var(--modal-bg, #181818);
+  color: var(--modal-color, #fff);
+  margin: 6% auto;
+  padding: 2rem 2.5rem;
+  border-radius: 1.2rem;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: left;
+}
+#detailsModal .close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#detailsModal .close-modal:hover {
+  color: var(--accent, #ffb347);
+}
+#detailsModal ul {
+  margin: 1rem 0 0 0;
+  padding-left: 1.2rem;
+}
+#detailsModal li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
 }
