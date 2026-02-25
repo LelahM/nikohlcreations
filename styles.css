@@ -877,7 +877,7 @@ section {
 }
 
 .social-icons a:hover {
-    transform: translateY(-5px) scale(1.1);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -1288,6 +1288,39 @@ section {
         font-size: 1.1rem;
         padding: 1.5rem 0.5rem;
     }
+}
+
+@media (max-width: 700px) {
+  .about-text .cta-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .nav-brand {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .nav-brand h1 {
+    margin: 0 auto;
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .theme-toggle {
+    display: inline-flex !important;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 }
 
 @media (max-width: 480px) {
