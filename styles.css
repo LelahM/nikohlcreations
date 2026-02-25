@@ -1308,6 +1308,73 @@ section {
     }
 }
 
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 8px;
+  }
+  .navbar .container, .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-slogan {
+    font-size: 1.1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+  .project-card, .package-card {
+    min-width: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .about-image {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .profile-image {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+  .modal-content {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 1rem;
+  }
+  .cta-button, .choose-template-btn, .more-details-btn, .submit-btn, .submit-booking-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9em 0;
+  }
+  .form-group, .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-row > .form-group {
+    width: 100%;
+  }
+  .projects-categories {
+    gap: 1.5rem;
+  }
+}
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 10px;

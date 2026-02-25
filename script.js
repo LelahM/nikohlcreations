@@ -907,3 +907,44 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('❌ Error during initialization:', error);
     }
 });
+
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('/api/send-contact-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            });
+            const result = await response.json();
+            if (result.success) {
+                showToast('Message sent successfully!');
+                contactForm.reset();
+            } else {
+                showToast('Failed to send message. Please try again.');
+            }
+        } catch (err) {
+            showToast('Error sending message. Please try again.');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    });
+}
+
+function showToast(msg) {
+    const toast = document.getElementById('successToast');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+}
